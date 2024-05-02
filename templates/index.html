@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Site Metas -->
+    <title>Create CV Resume - Responsive HTML5 Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="#" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="{% static 'css/pogo-slider.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98">
+
+    <!-- LOADER -->
+    <div id="preloader">
+        <div class="loader">
+            <img src="{% static 'images/loader.gif' %}" alt="#" />
+        </div>
+    </div>
+    <!-- end loader -->
+    <!-- END LOADER -->
+
+    <!-- Start header -->
+   
+    {% block navcontent %}
+    {% include 'base/nav.html'%}
+    {% endblock navcontent %}
+    <!-- End header -->
+
+    <!-- Start Banner -->
+    <div class="ulockd-home-slider">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="pogoSlider" id="js-main-slider">
+                    <div class="pogoSlider-slide" style="background-image:url(images/slider-01.jpg);">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="slide_text">
+                                        <h3><span class="theme_color">NAVRESUME</span> CREATE ONLINE RESUMES</h3>
+                                        <br>
+                                        <h4>CV AND PROFESSIONAL<br>RESUME IN MINUTES</h4>
+                                        <br>
+                                        <p>A resume builder is an interactive online tool or <br> piece of software that offers different resume templates and<br> allows users to create a resume quickly and easily</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pogoSlider-slide" style="background-image:url(images/slider-01.jpg);">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="slide_text">
+                                        <h3><span class="theme_color">EASILY</span> CREATE ONLINE</h3>
+                                        <br>
+                                        <h4>CV AND PROFESSIONAL<br>RESUME IN MINUTES</h4>
+                                        <br>
+                                        <p>Showcase your Profile to the world
+                                            <br>using online CV builder and Get Hired Faster</p>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- .pogoSlider -->
+            </div>
+        </div>
+    </div>
+    <!-- End Banner -->
+
+    <div class="section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full center">
+                        <div class="heading_main text_align_center">
+                            <h2><span class="theme_color">WE CAN</span> HELP YOUR CAREER GROW</h2>
+                            <p class="large">Get your CV Resume in easy steps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- section -->
+    <div class="section layout_padding theme_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 text_align_center">
+                    <div class="full">
+                        <img class="img-responsive" src="{% static 'images/resume_img.png' %}" alt="#" />
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 white_fonts">
+                    <h3 class="small_heading">EVERYTHING YOU NEED IN ONE SOLUTION</h3>
+                    <p>HELP YOUR NEXT CAREER MOVE MORE SMOOTHER AND MORE EFFICIENT</p>
+                    <p>Build your resume fast and easily with our online resume builder. It's packed with professional templates and step-by-step assistance. Just pick a template, and we'll guide you through the whole process with our expert tips. Making a resume has never been easier.</p>
+                    <a href="{% url 'create_resume' %}" class="hvr-radial-out button-theme">Get Started ></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end section -->
+
+    <!-- section -->
+   
+    <!-- end section -->
+
+    <!-- section -->
+   
+    <!-- end section -->
+
+    <!-- section -->
+    <div class="section layout_padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="full">
+                        <div class="center">
+                            <img src="{% static 'images/icon1.png' %}" alt="#" />
+                        </div>
+                        <div class="center">
+                            <h4>Make your resume fast</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="full">
+                        <div class="center">
+                            <img src="{% static 'images/icon2.png' %}" alt="#" />
+                        </div>
+                        <div class="center">
+                            <h4>Designed for Professionals</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="full">
+                        <div class="center">
+                            <img src="{% static 'images/icon3.png' %}" alt="#" />
+                        </div>
+                        <div class="center">
+                            <h4>Faster. interview calls</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-10 offset-lg-1 margin-top_30">
+                    <div class="full text_align_center">
+                        <p>If you don’t know how to build your own resume from scratch, don’t worry—the website walks you through the process step by step and tells you what information you need to input for each section</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end section -->
+
+    <!-- Start Footer -->
+    {% block contactcontent %}
+    {% include 'base/contactus.html' %}
+    {% endblock contactcontent %}
+    <!-- End Footer -->
+
+    <div class="footer_bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="crp">© 2019 RD resume . All Rights Reserved.</p>
+                    <ul class="bottom_menu">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Find jobs</a></li>
+                        <li><a href="#contactus">Contact us</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- ALL PLUGINS -->
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.pogo-slider.min.js' %}"></script>
+    <script src="{% static 'js/slider-index.js' %}"></script>
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <script src="{% static 'js/form-validator.min.js' %}"></script>
+    <script src="{% static 'js/contact-form-script.js' %}"></script>
+    <script src="{% static 'js/isotope.min.js' %}"></script>
+    <script src="{% static 'js/images-loded.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Your Resumes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .cv-item {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        .cv-item:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.imgur.com/8wMzUTM.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -1;
+        }
+        .cv-item h2 {
+            margin: 0;
+            color: #333;
+            font-size: 28px;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .section {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            position: relative;
+            z-index: 1;
+        }
+        .section-title {
+            color: #007bff;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .section-content p {
+            margin: 5px 0;
+        }
+        .edit-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .edit-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .edit-link a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% for resume in resumes %}
+        <div class="cv-item">
+            {% if resume.image %}
+            <img src="{{ resume.image.url }}" alt="Profile Image" style="max-width: 200px; border-radius: 8px; display: block; margin: 0 auto;">
+            {% endif %}
+            <h2>{{ resume.fname }} {{ resume.lname }}</h2>
+            <div class="section">
+                <p class="section-title">Role:</p>
+                <p class="section-content">{{ resume.role }}</p>
+            </div>
+            <div class="section">
+                <p class="section-title">Date of Birth:</p>
+                <p class="section-content">{{ resume.dob }}</p>
+            </div>
+            <div class="section">
+                <p class="section-title">Email:</p>
+                <p class="section-content">{{ resume.email }}</p>
+            </div>
+            <div class="section">
+                <p class="section-title">Address:</p>
+                <p class="section-content">{{ resume.address }}</p>
+            </div>
+            <div class="section">
+                <p class="section-title">Profile:</p>
+                <p class="section-content">{{ resume.profile }}</p>
+            </div>
+            <div class="section">
+                <p class="section-title">Skills:</p>
+                <p class="section-content">{{ resume.skills }}</p>
+            </div>
+            <div class="section">
+                <p class="section-title">Education:</p>
+                <p class="section-content">{{ resume.education }}</p>
+            </div>
+            <div class="section">
+                <p class="section-title">Experience:</p>
+                <p class="section-content">{{ resume.experience }}</p>
+            </div>
+            <div class="edit-link">
+                <a href="{% url 'update_resume' pk=resume.pk %}">Edit</a>
+                <a href="{% url 'download_resume' pk=resume.pk %}">Download</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

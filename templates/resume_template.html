@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color:white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(249, 247, 247, 0.1);
+        }
+        h1, h2, h3 {
+            color:black;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 5px;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .section-content {
+            margin-left: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+        {% if encoded_image %}
+        <img src="data:image/jpeg;base64,{{ encoded_image }}" alt="Profile Image" style="width: 100px; height: auto; border-radius: 4px; margin-bottom: 15px; position: absolute; top: 20; left: 20;">
+
+       {% endif %}
+       <h1 style="text-align: center;">{{ resume.fname }} {{ resume.lname }}</h1>
+        <h2 style="text-align: center;" class="section-content">{{ resume.role }}</h2>
+    <div class="container">   
+        
+        <div class="section">
+            <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" class="section-title">Date of Birth:</p>
+            <p class="section-content">{{ resume.dob }}</p>
+        </div>
+        <div class="section">
+            <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" class="section-title">Email:</p>
+            <p class="section-content">{{ resume.email }}</p>
+        </div>
+        <div class="section">
+            <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" class="section-title">Address:</p>
+            <p class="section-content">{{ resume.address }}</p>
+        </div>
+        <div class="section">
+            <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" class="section-title">Profile:</p>
+            <p class="section-content">{{ resume.profile }}</p>
+        </div>
+        <div class="section">
+            <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" class="section-title">Skills:</p>
+            <p class="section-content">{{ resume.skills }}</p>
+        </div>
+        <div class="section">
+            <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" class="section-title">Education:</p>
+            <p class="section-content">{{ resume.education }}</p>
+        </div>
+        <div class="section">
+            <p style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" class="section-title">Experience:</p>
+            <p class="section-content">{{ resume.experience }}</p>
+        </div>
+    </div>
+</body>
+</html>
